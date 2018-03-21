@@ -34,6 +34,3 @@ Outros:
 - Desafios:
 	- [HackerRank](https://www.hackerrank.com/)
 	- [CodeWars](https://www.codewars.com/)
-
-Um guia mais completo de front end: https://frontendmasters.com/books/front-end-handbook/2018/
-Esse canal no youtube me ajudou muito tambem: https://www.youtube.com/playlist?list=PL7pEw9n3GkoW5bYOhVAtmJlak3ZK7SaDf
