@@ -1,25 +1,25 @@
 # Estudo
 Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 
-##Links e referências para estudo (wip):
+## Links e referências para estudo (wip):
 - Gerais:
 	- [Awesome Awesomeness](https://github.com/bayandin/awesome-awesomeness)
 	- [Hackr.io](https://hackr.io/)
-	- [PluralSight](https://app.pluralsight.com/library/)
 	- [Udemy](https://www.udemy.com/)
 	- [Udacity](https://br.udacity.com/#)
 	- [Professional eBooks](http://book.goalkicker.com/)
 	- [Programming eBooks](https://github.com/EbookFoundation/free-programming-books)
+	- [PluralSight](https://app.pluralsight.com/library/)
 
 - Front-End:
 	- Geral
 		- [Handbook FM](https://frontendmasters.com/books/front-end-handbook/2018/)
-		- [Front-End Masters](https://frontendmasters.com/)
 		- [Grab Guide](https://github.com/grab/front-end-guide)
 		- [SpellBook](https://github.com/dexteryy/spellbook-of-modern-webdev)
 		- [JS Stack](https://github.com/verekia/js-stack-from-scratch)
 		- [Directory](https://frontend.directory/p/56e33d91b7c64d1a006c250e)
 		- [CodeCasts](https://codecasts.com.br/series)
+		- [Front-End Masters](https://frontendmasters.com/)
 
 	- Javascript
 		- [Awesome](https://github.com/sorrycc/awesome-javascript)
@@ -45,6 +45,10 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 	- HTML
 
 	- Angular 2+
+		- [Docs Official](https://angular.io/guide/quickstart)
+		- [LearnAngular](http://learnangular2.com/)
+		- [Rangle.io](https://angular-2-training-book.rangle.io/)
+		- [Angular Basics](http://www.angularjsbook.com/angular-basics/chapters/)
 
 	- Vue 2
 		- [Laracast](https://laracasts.com/series/learn-vue-2-step-by-step)
