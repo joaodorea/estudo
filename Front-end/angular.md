@@ -3,49 +3,50 @@
 Conteúdo:
 
 1. [Overview](#overview):
-    - Modules
-    - Components
-    - Services & Dependency
+    - Modules Intro
+    - Components Intro
+    - Services & Dependency Intro
 
 2. [Components & Templates](#components-and-templates):
     - Template Syntax
     - Lifecycle Hook
     - Component Interaction
     - Dynamic Component
+    - Interactions
     - Directives
     - Pipes
     - Animations
 
-3. Forms:
+3. [Forms](#forms):
     - Template driven
     - Reactive Forms
     - Form Validation
     - Dynamic Forms
 
-4. Observables & RxJS
+4. [Observables & RxJS](#observables-and-rxjs)
 
-5. Styling
+5. [Styling](#styling)
 
-6. NgModules
+6. [NgModules](#ngmodules)
     - Providers
     - Singleton
     - Lazy Load
     - Sharing NgModules
 
-7. Dependency Injection
+7. [Dependency Injection](#dependency-injection)
 
-8. HttpClient
+8. [HttpClient](#httpclient)
 
-9. Routing & Navigation
+9. [Routing & Navigation](#routing-and-navigation)
 
-10. Testing
+10. [Testing](#testing)
 
 11. [Angular CLI](#angular-cli)
 
 
 ## Overview
 
-### Modules
+### Modules Intro
 
 Estrutura básica
 ```javascript
@@ -60,8 +61,11 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AppModule { }
 ```
+### Components Intro
 
-### Component
+### Services
+
+## Components and Templates
 
 Para criar um component
 ```javascript
@@ -79,24 +83,43 @@ import { Component } from '@angular/core';
 export class RequiredComponent{}
 ```
 
-### Pipes (wip)
+### Lifecycle Hook
+- OnChanges
+    - One or more of the component or directive properties have been changed
+- OnInit
+    - Component or directive properties have been initialized
+    - Before those of the child directives
+- OnDestroy
+    - The instance of a component or directive is destroyed
+- AfterContentInit
+    - After the initialization of the content has finished
+    - After OnInit
+- AfterContentChecked
+    - After the view has been fully initalized
+    - Only for components
+- AfterViewInit
+    - After initializing both component view and any of its child views
+- AfterViewChecked
+    - After the check of the view has finished
+    - Only for components
+- DoCheck
+    - Listen to changes on specified properties
 
-## Components and Templates
+## Forms
 
-### Changing page Title
-```javascript
-import { Title } from "@angular/platform-browser";
-@Component({
-    selector:'app',
-    templateUrl:'./app.component.html',
-    providers:[Title]
-})
-export class AppComponentimplements {
-    constructor(private title:Title){
-        this.title.setTitle('page title changed');
-    }
-}
-```
+## Objservables and RxJS
+
+## Styling
+
+## NgModules
+
+## Dependency Injection
+
+## HttpClient
+
+## Routing and Navigation
+
+## Testing
 
 ## Angular CLI
 
@@ -139,3 +162,27 @@ cd [...]
 npm install
 npm start
 ```
+
+
+
+
+## Others
+
+### Changing page Title
+```javascript
+import { Title } from "@angular/platform-browser";
+@Component({
+    selector:'app',
+    templateUrl:'./app.component.html',
+    providers:[Title]
+})
+export class AppComponentimplements {
+    constructor(private title:Title){
+        this.title.setTitle('page title changed');
+    }
+}
+```
+
+
+References:
+Angular 2 - Notes for professional
