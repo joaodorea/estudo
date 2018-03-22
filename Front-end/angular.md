@@ -119,6 +119,32 @@ export class RequiredComponent{}
 
 ## Routing and Navigation
 
+### Basics
+The first step to use routers is import the RouterModule, and in declarations use the .forRoot() method to especifie an Array of Objects.
+The Objects has an obligated property: 'path' that accepts a string containing the URL route, the orders of the objects (path) matters. After especifing a path, we need to especifie the component to be loaded, ou the path to be redirected to. In case we want a generic path, we can use path: **, so any path that doesn't math the previously ones, will trigger the ** path.
+After the configuration of the for.Root() method, we use the sintax <router-outlet> on the view we want to load the paths.
+To trigger the RouterModule system we need to use the routerLink attribute to load the component.
+- Define Base Path
+    - 'app/index.html'
+- Import Router (RouterModule)
+    - .forRoot([...]) - used only once, declares router directives
+    - .forChild() - declares router directives, used in feature modules
+- Configure Routes
+    - [{ path: 'url', component: ComponentName[, pathMatch: 'full'] },...] - case sensitive, don't start with '/', the orders matters
+- Place Template
+    - <router-outlet></>
+    - [routerLink]="['/pathUrl']" == routerLink="/pathUrl"
+- Activate Routes
+
+### Feature Router
+
+We use the .forChild([]) method
+We need to be sure to do not import the services again
+
+- Import Router
+- Configure Routes
+- Activate Routes
+
 ## Testing
 
 ## Angular CLI
