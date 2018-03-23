@@ -124,6 +124,8 @@ The first step to use routers is import the RouterModule, and in declarations us
 The Objects has an obligated property: 'path' that accepts a string containing the URL route, the orders of the objects (path) matters. After especifing a path, we need to especifie the component to be loaded, ou the path to be redirected to. In case we want a generic path, we can use path: **, so any path that doesn't math the previously ones, will trigger the ** path.
 After the configuration of the for.Root() method, we use the sintax <router-outlet> on the view we want to load the paths.
 To trigger the RouterModule system we need to use the routerLink attribute to load the component.
+It's always a good pratice to use the routers outside the main module.
+
 - Define Base Path
     - 'app/index.html'
 - Import Router (RouterModule)
@@ -135,15 +137,49 @@ To trigger the RouterModule system we need to use the routerLink attribute to lo
     - <router-outlet></>
     - [routerLink]="['/pathUrl']" == routerLink="/pathUrl"
 - Activate Routes
+    - Import the Router service
+    - Add the dependency in the constructor
+    - use the methods avaliable by the service
 
 ### Feature Router
-
-We use the .forChild([]) method
+We use the .forChild([]) method instead of .forRoot([])
 We need to be sure to do not import the services again
+To use the router navigation on the component ts file, we need to import the Router, call it in the constructor, and then use the code:
+```javascript
+this.router.navigate(['/url-name']); // standard syntax
+this.router.navigate('/url-name'); // short-cut syntax
+this.router.navigateByUrl('/url-name'); // Complete url path
+```
+Any router definitions that are explicity configured in a external module are processed last. Always be careful with the '**' syntax, it needs to be called last.
 
 - Import Router
 - Configure Routes
 - Activate Routes
+
+### Route Parameters
+To populate the router we can use the navigate methodt o pass more parameters to the array: this.router.navigate(['/url-name', 'parameter'])
+To read a router parameter we need to import the ActivatedRoute, call it in the constructor, and then use the snapshot method or the observable. The snapshot reads the initial value of the params and has simpler code
+```javascript
+let id = this.routeService.snapshot.params['param'];
+```
+Or the observable method to read the value and listen to its changes:
+```javascript
+this.routeService.params.subscribe(
+    params => {
+        let id = params['id'];
+    }
+)
+```
+The optional params are passed as objects in the navigation and read as normal params. The queryParams is passed as [queryParams]="{key: 'value'}" in the template file and to maintain them when accessing other pages, we need to use the [perserveQueryParams]="true"
+(v4+ queryParamsHandling = 'preserve').
+To use the queryParams on the component ts file, we need to pass them as arguments of the navigate method:
+```javascript
+this.route.navigate(['/url-name'], {
+    queryParams: { filterBy: 'er', showImage: true }
+})
+```
+
+
 
 ## Testing
 
@@ -212,3 +248,4 @@ export class AppComponentimplements {
 
 References:
 Angular 2 - Notes for professional
+Angular Routing by: Deborah Kurata (Pluralsight)
