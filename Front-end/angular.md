@@ -17,31 +17,33 @@ Conteúdo:
     - Pipes
     - Animations
 
-3. [Forms](#forms):
+3. [Services](#services)
+
+4. [Forms](#forms):
     - Template driven
     - Reactive Forms
     - Form Validation
     - Dynamic Forms
 
-4. [Observables & RxJS](#observables-and-rxjs)
+5. [Observables & RxJS](#observables-and-rxjs)
 
-5. [Styling](#styling)
+6. [Styling](#styling)
 
-6. [NgModules](#ngmodules)
+7. [NgModules](#ngmodules)
     - Providers
     - Singleton
     - Lazy Load
     - Sharing NgModules
 
-7. [Dependency Injection](#dependency-injection)
+8. [Dependency Injection](#dependency-injection)
 
-8. [HttpClient](#httpclient)
+9. [HttpClient](#httpclient)
 
-9. [Routing & Navigation](#routing-and-navigation)
+10. [Routing & Navigation](#routing-and-navigation)
 
-10. [Testing](#testing)
+11. [Testing](#testing)
 
-11. [Angular CLI](#angular-cli)
+12. [Angular CLI](#angular-cli)
 
 
 ## Overview
@@ -179,7 +181,12 @@ this.route.navigate(['/url-name'], {
 })
 ```
 
+### Prefetching Data
+Prevents Display of a partial page
+Reuses code and imporves flow
+(wip)
 
+### 
 
 ## Testing
 
