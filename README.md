@@ -2,7 +2,7 @@
 Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 
 ## Links e referências para estudo (wip):
-- Gerais:
+### - Gerais:
 	- [Awesome Awesomeness](https://github.com/bayandin/awesome-awesomeness)
 	- [Hackr.io](https://hackr.io/)
 	- [Udemy](https://www.udemy.com/)
@@ -11,7 +11,7 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 	- [Programming eBooks](https://github.com/EbookFoundation/free-programming-books)
 	- [PluralSight](https://app.pluralsight.com/library/)
 
-- Front-End:
+### - Front-End:
 	- Geral
 		- [Handbook FM](https://frontendmasters.com/books/front-end-handbook/2018/)
 		- [Grab Guide](https://github.com/grab/front-end-guide)
@@ -61,7 +61,7 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 		- [Webpack - SurviveJs](https://survivejs.com/blog/webpack-book-updated-to-webpack-4/)
 
 
-- Back-End
+### - Back-End
 	- Node.JS
 		- [The Art Node.JS](https://github.com/maxogden/art-of-node#the-art-of-node)
 		- 
@@ -84,6 +84,21 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 		- [Python The Hard Way](https://learnpythonthehardway.org/book/)
 		- [Django Girls](https://tutorial.djangogirls.org/pt/django_installation/)
 
+### - Design (UI and UX)
+	- [Material.io](https://material.io/guidelines) 
+	- [Muzli](https://medium.muz.li/)
+	- [Tips for Cheating at Design](https://goo.gl/EK2Y98): Adam Wathan & Steve Schoger
+	- [Minimalist Design](https://goo.gl/Gt37rn): Nick Babich
+	- [Design Trends 2018](https://goo.gl/pTXrWH): Parth Taylor
+	- [Laws of UX](https://goo.gl/RbgE28): Product Disrupt
+	- [UI Animation Tips](https://goo.gl/xik6dx): Pablo Stanley
+	- [UX Resources and Tools' list](https://goo.gl/x8eBPE): Jason Hreha
+	- [UX in Motion Manifesto](https://goo.gl/JYfCCr): Issara Willenskomer
+	- [30 Excellent Dashboards](https://goo.gl/ARF8Va): Premiumuikits
+	- [Design Inspiration's list](https://goo.gl/7woxHQ): Dennis Cortés
+	- [Form Design Pratice](https://goo.gl/JUP4Ds): Ken Lee-Sanekata
+	- [Inspiration 2017](https://goo.gl/9CMG6E): Muzli
+
 ##Outros:
 - Desafios:
 	- [HackerRank](https://www.hackerrank.com/)
@@ -98,7 +113,7 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 - Interview Questions
 	- [Js](https://github.com/yangshun/front-end-interview-handbook/blob/master/questions/javascript-questions.md)
 	- [Toptal](https://www.toptal.com/javascript/interview-questions)
-	- [CodeMentor](https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z)
+	- [CodeMentor](https://goo.gl/WSnWcb)
 
 - API's List
 	- [Javacripting](https://www.javascripting.com/)
