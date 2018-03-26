@@ -182,11 +182,10 @@ this.route.navigate(['/url-name'], {
 ```
 
 ### Prefetching Data
-Prevents Display of a partial page
-Reuses code and imporves flow
+Retrive data before routing to the component, Prevents Display of a partial page, reuses code and imporves flow
 (wip)
 
-### 
+### Child Routes
 
 ## Testing
 

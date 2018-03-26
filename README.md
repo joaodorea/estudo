@@ -98,11 +98,15 @@ Esse repositório vai servir para guardar os resumos dos assuntos estudados.
 - [Design Inspiration's list](https://goo.gl/7woxHQ): Dennis Cortés
 - [Form Design Pratice](https://goo.gl/JUP4Ds): Ken Lee-Sanekata
 - [Inspiration 2017](https://goo.gl/9CMG6E): Muzli
+- [Data visualization](https://goo.gl/or93Nr): Shashank Sahay
 
 ##Outros:
 - Desafios:
 	- [HackerRank](https://www.hackerrank.com/)
 	- [CodeWars](https://www.codewars.com/)
+	- [CoderByte](https://coderbyte.com/)
+	- [CodeFights](https://codefights.com/)
+	- [GeeksforGeeks](https://www.geeksforgeeks.org/)
 
 - Notícias:
 	- [SmashMagazine](https://www.smashingmagazine.com/)
