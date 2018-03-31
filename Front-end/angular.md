@@ -198,6 +198,10 @@ ng new my-new-app
 cd my-new-app
 ng serve
 ```
+To change the deafult ports
+```javascript
+ng serve --port 4201 --live-reload-port 49153
+```
 
 Descrição   |   Comando
 ------------ | -------------
@@ -213,9 +217,9 @@ Descrição   |   Comando
 
 ### Build the project
 ```javascript
-ng build
-ng build --prod # production build
-ng build --prod -aot # production plus ahead of time, removes the template compiler 
+ng build == ng build --dev  // developer build
+ng build --prod             // production build
+ng build --prod -aot        // production plus ahead of time, removes the template compiler 
 ```
 
 ### Unit Testing
@@ -231,9 +235,20 @@ npm install
 npm start
 ```
 
+### Using pre-processor
+```javascript
+// For a new Project
+ng new my-project --style=sass
+ng new my-project --style=less
+ng new my-project --style=stylus
 
+// For existing project
+ng set defaults.styleExt scss
+ng set defaults.styleExt less
+ng set defaults.styleExt styl
+```
 
-
+***
 ## Others
 
 ### Changing page Title
