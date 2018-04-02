@@ -10,12 +10,9 @@ Conteúdo:
 2. [Components & Templates](#components-and-templates):
     - Template Syntax
     - Lifecycle Hook
+    - Directives
     - Component Interaction
     - Dynamic Component
-    - Interactions
-    - Directives
-    - Pipes
-    - Animations
 
 3. [Services](#services)
 
@@ -67,6 +64,7 @@ export class AppModule { }
 
 ### Services
 
+
 ## Components and Templates
 
 Para criar um component
@@ -84,6 +82,68 @@ import { Component } from '@angular/core';
 })
 export class RequiredComponent{}
 ```
+
+### Template Syntax (WIP)
+
+- Interpolation
+- Template Expressions
+- Template Statements
+- Bindings Syntax
+- Property binding
+- Attribute, class and style Binding
+- Event Binding
+- Two-way binding
+- Built-in directives
+- Built-in attribute directives
+- Built-in Structural directive
+- Template reference
+- Template expression operators
+
+#### Structural Directives (WIP)
+
+Responsible for HTML layout, changes the shape of the DOM, add, remove or manipulate HTML elements.
+
+- *ngFor
+- *ngIf
+- [ngSwitch]/*ngSwitchCase, *ngSwitchDefault
+- [hidden]="boolean"
+
+#### Attribute Directives (WIP)
+- [ngClass]="{className: boolean, className2: boolean}" || [ngClass]="FunctionReturnsArray()"
+- [ngStyle]="{color: 'red', backgroundColor: 'transparent'}"
+
+
+### Component Interaction (WIP)
+
+- @Input() varName;
+    - To pass data from a parent component to a child component we use the Input decorator.
+    ```javascript
+    // parents.html
+    <child-component [property]="valueToBePassed"></child-component>
+    
+    //child.component.ts
+    import { ..., Input } from '@angular/core'
+
+    export class ChildComponent {
+        @Input('newName') property; // this variable will = 'valueToBePassed'
+    }
+    ```
+- @Output() eventName;
+- Template Variable
+    - We can call a method in a child component class, by passing a template variable to it on its parent and then calling the method/property.
+    ```javascript
+    // parent.html
+    <child-component #var></child-component>
+    <button (click)="var.method()"></button>
+
+    // child.component.ts
+    export class ChildComponent {
+        //...
+        method() {
+            /...
+        }
+    }
+    ```
 
 ### Lifecycle Hook
 - OnChanges
@@ -107,21 +167,55 @@ export class RequiredComponent{}
 - DoCheck
     - Listen to changes on specified properties
 
+
+## Services
+
+A service is a class we export and can be shared with others components, and injected into others services. To use it we just need to especifie it on the providers array in the module, and then in the component we want to use its methods and properties.
+@Injectable() is required when we inject a service, that gets others services as dependencies
+
+Basic Structure:
+```javascript
+// name.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class NameService {
+  constructor() { }
+  /* Methods and properties */
+}
+```
+
+```javascript
+// Component
+import { NameService } from './location/name.service.ts'
+export class ComponentName {
+    constructor(private refName: NameService) {} // Shothand call
+}
+```
+
+
 ## Forms
+
 
 ## Objservables and RxJS
 
+
 ## Styling
+
 
 ## NgModules
 
+
 ## Dependency Injection
 
+
 ## HttpClient
+
 
 ## Routing and Navigation
 
 ### Basics
+A router is used to load a component without reloading the entire page, this process can make the navigation really fast.
 The first step to use routers is import the RouterModule, and in declarations use the .forRoot() method to especifie an Array of Objects.
 The Objects has an obligated property: 'path' that accepts a string containing the URL route, the orders of the objects (path) matters. After especifing a path, we need to especifie the component to be loaded, ou the path to be redirected to. In case we want a generic path, we can use path: **, so any path that doesn't math the previously ones, will trigger the ** path.
 After the configuration of the for.Root() method, we use the sintax <router-outlet> on the view we want to load the paths.
@@ -129,19 +223,30 @@ To trigger the RouterModule system we need to use the routerLink attribute to lo
 It's always a good pratice to use the routers outside the main module.
 
 - Define Base Path
-    - 'app/index.html'
+    - 'app/index.html' after the head tag
+    ```javascript
+    <base href="/">
+    ```
 - Import Router (RouterModule)
     - .forRoot([...]) - used only once, declares router directives
     - .forChild() - declares router directives, used in feature modules
 - Configure Routes
     - [{ path: 'url', component: ComponentName[, pathMatch: 'full'] },...] - case sensitive, don't start with '/', the orders matters
 - Place Template
-    - <router-outlet></>
+    - <router-outlet></router-outlet>
     - [routerLink]="['/pathUrl']" == routerLink="/pathUrl"
 - Activate Routes
     - Import the Router service
     - Add the dependency in the constructor
     - use the methods avaliable by the service
+- RouterLinkActive
+    - The Directive for adding/removing classes from an HTML element when an associated routerLink becomes active/inactive
+
+```javascript
+// component.html
+routerLinkActive="active"                           // if this route is active the element will get the class 'active'
+[routerLinkActiveOptions]="{exact: true}"           // (Optional) Only activated when the link match the exact path
+```
 
 ### Feature Router
 We use the .forChild([]) method instead of .forRoot([])
@@ -182,16 +287,54 @@ this.route.navigate(['/url-name'], {
 ```
 
 ### Prefetching Data
-Retrive data before routing to the component, Prevents Display of a partial page, reuses code and imporves flow
-(wip)
 
-### Child Routes
+Wait to retrive data before routing to the component, Prevents Display of a partial page, reuses code and imporves flow.
+The app waited until the route was activated to fetch the respective data. This method allows us to handle errors before routing to the component. It's preferable to pre-fetch data from server so ir's ready the moment the route is activated. we do this using a *resolver*.
+
+### Guards
+
+- CanActivate
+    - Used to restrict the access of the user to a determinated area.
+    - Usually the user need to be authenticated or have a specific role.
+- CanActivateChild
+    - Used to protect a child route.
+    - Similar to CanActivate. The key diference is that it runs before any child route is activated
+- CanDeactivate
+    - Prevent the user to leave the page.
+
+### Lazing Loading
+
+When a route is activated, we will load a module containing the routing and the component of that route. This technic is used to load those informations only when its necessary, speeding up load time.
+To do that, we need to create a new module and a new routing to that route. We need to remember to use the .forChild() method in the Feature Module's RouterModule.
+
+```javascript
+// parent module
+{path: 'routePath', loadChildren: 'path/to/the/module#NameOfModule'}, // On the routes const
+```
+
+### [Reference](https://angular.io/guide/router#summary):
+Router Parte            | Meaning
+----------------------  | ----------------------
+Router                  |  	Displays the application component for the active URL. Manages navigation from one component to the next.
+RouterModule            |  	A separate NgModule that provides the necessary service providers and directives for navigating through application views.
+Routes                  |  	Defines an array of Routes, each mapping a URL path to a component.
+Route                   |  	Defines how the router should navigate to a component based on a URL pattern. Most routes consist of a path and a component type.
+RouterOutlet            |  	The directive (<router-outlet>) that marks where the router displays a view.
+RouterLink              |  	The directive for binding a clickable HTML element to a route. Clicking an element with a routerLink directive that is bound to a string or a link parameters array triggers a navigation.
+RouterLinkActive        |  	The directive for adding/removing classes from an HTML element when an associated routerLink contained on or inside the element becomes active/inactive.
+ActivatedRoute          |  	A service that is provided to each route component that contains route specific information such as route parameters, static data, resolve data, global query params, and the global fragment.
+RouterState             |  	The current state of the router including a tree of the currently activated routes together with convenience methods for traversing the route tree.
+Link parameters array   |  	An array that the router interprets as a routing instruction. You can bind that array to a RouterLink or pass the array as an argument to the Router.navigate method.
+Routing component       |  	An Angular component with a RouterOutlet that displays views based on router navigations.
+
 
 ## Testing
+
 
 ## Angular CLI
 
 ### Install Globally
+
 ```javascript
 npm install -g @angular/cli
 ng new my-new-app
@@ -270,3 +413,9 @@ export class AppComponentimplements {
 References:
 Angular 2 - Notes for professional
 Angular Routing by: Deborah Kurata (Pluralsight)
+
+App references:
+
+
+More about Angular +2:
+https://angular.io/guide/
